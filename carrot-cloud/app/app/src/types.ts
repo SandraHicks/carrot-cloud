@@ -17,3 +17,5 @@ export type PartialWith<T, KS extends keyof T> = Partial<T> & Pick<T, KS>
 export type Values<T> = T[keyof T]
 
 export type MaybeOmit<T, KS extends keyof T> = Omit<T, KS> & Partial<T>
+
+export type ID = number | string

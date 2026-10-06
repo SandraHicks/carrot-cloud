@@ -35,8 +35,8 @@ services:
             NODE_ENV: production
         volumes:
             - ..:/usr/src
-            - carrot-staticfiles:/usr/src/app/staticfiles
-        entrypoint: npm run start
+            #- carrot-staticfiles:/usr/src/app/staticfiles
+        entrypoint: npm run dev
         networks:
             - default-network
         user: ${DOCKER_USER}
@@ -45,6 +45,5 @@ networks:
     default-network:
 volumes:
     carrotdev-postgres:
-        external: true
-    carrot-staticfiles:
-        external: true
+    #carrot-staticfiles:
+        #external: true

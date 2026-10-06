@@ -10,5 +10,6 @@ done
 
 # start app and wait for DB schema be initialized
 echo "Was able to connect to DB, now starting app..."
+#npm run start
 npm run start
 grep -q "DB initialized"

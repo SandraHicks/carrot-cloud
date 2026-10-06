@@ -1,9 +1,10 @@
+import { ID } from '../src/types'
 
 
-export * as Users from 'model/users'
+export * as Users from './users'
 
 export type UserRaw = {
-    id: number
+    id: ID
     username: string
     email: string
     password: string
