@@ -1,0 +1,50 @@
+name: carrot-cloud-dev
+
+services:
+    postgres:
+        image: postgres:18-alpine
+        restart: always
+        networks:
+            - default-network
+        ports:
+            - 127.0.0.1:5434:5432
+        environment:
+            POSTGRES_DB: carrot-db
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: iE0pERhblp72H23eusn32O1y
+        volumes:
+            - carrotdev-postgres:/var/lib/postgresql/data
+        command: postgres -c shared_buffers=256MB -c max_connections=200
+
+    app:
+        build:
+            context: ../app
+        restart: always
+        depends_on:
+            - postgres
+        links:
+            - postgres:db
+        environment:
+            PORT: 3000
+            DB_NAME: nextjs_flash
+            DB_USER: postgres
+            DB_HOST: db
+            DB_PASSWORD: e3mOxd67DqCK4W1nOWtX
+            DB_PORT: 5432
+            BASE_URL: http://localhost:3000/
+            NODE_ENV: production
+        volumes:
+            - ..:/usr/src
+            - carrot-staticfiles:/usr/src/app/staticfiles
+        entrypoint: npm run start
+        networks:
+            - default-network
+        user: ${DOCKER_USER}
+
+networks:
+    default-network:
+volumes:
+    carrotdev-postgres:
+        external: true
+    carrot-staticfiles:
+        external: true
