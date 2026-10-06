@@ -218,7 +218,7 @@ async function setupViews(from_index: number = 1, below_index: number = Number.M
 export const pool = onceGlobally("/src/db.ts/pool", () => new Pool({
     host: env.DB_HOST ?? '0.0.0.0',
     port: env.DB_PORT != null ? +env.DB_PORT : undefined,
-    database: env.DB_NAME ?? 'nextjs_flash',
+    database: env.DB_NAME ?? 'carrot_db',
     user: env.DB_USERNAME ?? 'postgres',
     password: env.DB_PASSWORD ?? '',
     min: Number(env.DB_POOL_MIN),
@@ -281,7 +281,7 @@ function instrumentQueries(pool: SaneSlonikPool) {
 }
 
 export const spool = await onceGlobally("/src/db.ts/spool", () => Slonik.createPool(
-    `postgres://${env.DB_USERNAME ?? 'postgres'}:${env.DB_PASSWORD ?? ''}@${env.DB_HOST ?? '0.0.0.0'}:${env.DB_PORT ?? "5432"}/${env.DB_NAME ?? 'nextjs_flash'}`,
+    `postgres://${env.DB_USERNAME ?? 'postgres'}:${env.DB_PASSWORD ?? ''}@${env.DB_HOST ?? '0.0.0.0'}:${env.DB_PORT ?? "5432"}/${env.DB_NAME ?? 'carrot_db'}`,
     {
         captureStackTrace: env.ROARR_LOG === "true",
         typeParsers: [
@@ -316,7 +316,7 @@ export const no_tx = spool as SaneSlonikTransaction
 export const pool = onceGlobally("/src/db.ts/pool", () => new Pool({
     host: env.DB_HOST ?? '0.0.0.0',
     port: env.DB_PORT != null ? +env.DB_PORT : undefined,
-    database: env.DB_NAME ?? 'nextjs_flash',
+    database: env.DB_NAME ?? 'carrot_db',
     user: env.DB_USERNAME ?? 'postgres',
     password: env.DB_PASSWORD ?? '',
     min: Number(env.DB_POOL_MIN),
