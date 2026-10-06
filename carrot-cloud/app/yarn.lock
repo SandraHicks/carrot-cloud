@@ -598,6 +598,13 @@
     serialize-error "^12.0.0"
     strict-event-emitter-types "^2.0.0"
 
+"@slonik/errors@^49.10.10":
+  version "49.10.10"
+  resolved "https://registry.yarnpkg.com/@slonik/errors/-/errors-49.10.10.tgz#50fb4208b5a1e320f96795b94441651fa855e707"
+  integrity sha512-b2dn3YELvPdbrA0bNAxY3qdvkiggqm7xbSvA9qvE45C7kL0pFv+czIbbvSnN0B146wO4tZjH7bK4PuGks4L6wQ==
+  dependencies:
+    "@slonik/types" "^49.10.10"
+
 "@slonik/errors@^49.10.9":
   version "49.10.9"
   resolved "https://registry.yarnpkg.com/@slonik/errors/-/errors-49.10.9.tgz#4be2aab61d617e6b1427935ddfc48e85a0e52328"
@@ -620,6 +627,18 @@
     pg-types "^4.1.0"
     postgres-array "^3.0.4"
 
+"@slonik/sql-tag@^49.10.10":
+  version "49.10.10"
+  resolved "https://registry.yarnpkg.com/@slonik/sql-tag/-/sql-tag-49.10.10.tgz#2c68b0e64c3ea4988cec57b9ca57dde4f64e8ba4"
+  integrity sha512-r7dVLNJ3FO4C2GIwbXtxxO6ja5XpZbXnQRLuxLcbtTJJnHT9d/9iQ7EuLkU0DDKdT5N9aECs8T/V/IYFkP2veg==
+  dependencies:
+    "@slonik/errors" "^49.10.10"
+    "@slonik/types" "^49.10.10"
+    roarr "^7.21.7"
+    safe-stable-stringify "^2.5.0"
+    serialize-error "^12.0.0"
+    zod "^4.3.6"
+
 "@slonik/sql-tag@^49.10.9":
   version "49.10.9"
   resolved "https://registry.yarnpkg.com/@slonik/sql-tag/-/sql-tag-49.10.9.tgz#069ffa501e6a0d4cd6c45ad58fa6135950cf8d38"
@@ -631,6 +650,11 @@
     safe-stable-stringify "^2.5.0"
     serialize-error "^12.0.0"
     zod "^4.3.6"
+
+"@slonik/types@^49.10.10":
+  version "49.10.10"
+  resolved "https://registry.yarnpkg.com/@slonik/types/-/types-49.10.10.tgz#b13861cd760006bd4192ea02c8ec38b627842b3f"
+  integrity sha512-orml6ZkwUjaFKHJYOXSvDBuyglmKJ77nI8pRV2+KGgLte0+Bll8VpCyoSJECKN6k9Z0mws8GBSSA9drcS0lHrw==
 
 "@slonik/types@^49.10.9":
   version "49.10.9"
@@ -3230,6 +3254,14 @@ side-channel@^1.1.0, side-channel@^1.1.1:
     side-channel-list "^1.0.1"
     side-channel-map "^1.0.1"
     side-channel-weakmap "^1.0.2"
+
+slonik-sql-tag-raw@^49.10.10:
+  version "49.10.10"
+  resolved "https://registry.yarnpkg.com/slonik-sql-tag-raw/-/slonik-sql-tag-raw-49.10.10.tgz#712f9aa7e721bd2b3de9769031a155ce36c270c5"
+  integrity sha512-CDPq7Um0RIFAfqrtiNbL/yWgW9Gct/585SBP7qJqPEEhDOfF2BTt4F1DICiodFqIll/si1raCqViZfqsGy/STw==
+  dependencies:
+    "@slonik/sql-tag" "^49.10.10"
+    roarr "^7.21.7"
 
 slonik@^49.10.9:
   version "49.10.9"

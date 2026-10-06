@@ -17,7 +17,8 @@
     "postgres-migrations": "^5.3.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "slonik": "^49.10.9"
+    "slonik": "^49.10.9",
+    "slonik-sql-tag-raw": "^49.10.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
